@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FactoryFinalProjectDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="depId" />
+    </Key>
+    <Property Name="depId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="manager" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="empId" />
+    </Key>
+    <Property Name="empId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fNmae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="startWorkYear" Type="Int32" Nullable="false" />
+    <Property Name="departmentId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employeeShift">
+    <Key>
+      <PropertyRef Name="esId" />
+    </Key>
+    <Property Name="esId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeId" Type="Int32" Nullable="false" />
+    <Property Name="shiftId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="shift">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="startTime" Type="Int32" Nullable="false" />
+    <Property Name="endTime" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numerOfactions" Type="Int32" />
+    <Property Name="action" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="FactoryFinalProjectDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="department" EntityType="Self.department" />
+    <EntitySet Name="employee" EntityType="Self.employee" />
+    <EntitySet Name="employeeShift" EntityType="Self.employeeShift" />
+    <EntitySet Name="shift" EntityType="Self.shift" />
+    <EntitySet Name="users" EntityType="Self.users" />
+  </EntityContainer>
+</Schema>

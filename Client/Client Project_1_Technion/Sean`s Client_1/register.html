@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Regestration form</title>
+  </head>
+  <body>
+    <script src="register.js"></script>
+    <title>Regestration form</title>
+
+    <div class="container-box">
+      <h1 style="text-align: center">Factory Regestration Page</h1>
+      <div class="row">
+        <div class="col-25">
+          <label>Full Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fName" placeholder="Enter your full name..." />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>Username</label>
+        </div>
+        <div class="col-75">
+          <input
+            type="text"
+            id="userName"
+            placeholder="Enter your username..."
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>Password</label>
+        </div>
+        <div class="col-75">
+          <input
+            type="text"
+            id="password"
+            placeholder="Enter your password..."
+          />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-25">
+          <label>Number Of actions</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="numOfactions" placeholder="20" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-25">
+          <label>Start With 0 Actions</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="numOfactions" placeholder="1" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-75">
+          <button type="button" onclick="createNewUser()" class="btn-primary">
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid black;
+        border-radius: 5px;
+        resize: vertical;
+      }
+
+      label {
+        font-family: san-serif;
+      }
+
+      .btn-primary {
+        background-color: #991c1c;
+        font-style: bold;
+        height: 50px;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 10px;
+      }
+
+      .col-75 {
+        width: 75% float left margin-top 10px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        .btn-primary {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .container-box {
+        background-color: #db875c;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FactoryFinalProjectDBModelStoreContainer" CdmEntityContainer="FactoryFinalProjectDBEntities">
+    <EntitySetMapping Name="department">
+      <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="depId" ColumnName="depId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="manager" ColumnName="manager" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee">
+      <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="fNmae" ColumnName="fNmae" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="startWorkYear" ColumnName="startWorkYear" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employeeShift">
+      <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.employeeShift">
+        <MappingFragment StoreEntitySet="employeeShift">
+          <ScalarProperty Name="esId" ColumnName="esId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="shiftId" ColumnName="shiftId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shift">
+      <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.shift">
+        <MappingFragment StoreEntitySet="shift">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="numerOfactions" ColumnName="numerOfactions" />
+          <ScalarProperty Name="action" ColumnName="action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

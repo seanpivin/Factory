@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FactoryFinalProjectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="depId" />
+          </Key>
+          <Property Name="depId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="manager" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fNmae" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="startWorkYear" Type="int" Nullable="false" />
+          <Property Name="departmentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employeeShift">
+          <Key>
+            <PropertyRef Name="esId" />
+          </Key>
+          <Property Name="esId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employeeId" Type="int" Nullable="false" />
+          <Property Name="shiftId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shift">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="startTime" Type="int" Nullable="false" />
+          <Property Name="endTime" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numerOfactions" Type="int" />
+          <Property Name="action" Type="int" />
+        </EntityType>
+        <EntityContainer Name="FactoryFinalProjectDBModelStoreContainer">
+          <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employeeShift" EntityType="Self.employeeShift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shift" EntityType="Self.shift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FactoryFinalProjectDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="depId" />
+          </Key>
+          <Property Name="depId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="manager" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fNmae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="startWorkYear" Type="Int32" Nullable="false" />
+          <Property Name="departmentId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employeeShift">
+          <Key>
+            <PropertyRef Name="esId" />
+          </Key>
+          <Property Name="esId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeId" Type="Int32" Nullable="false" />
+          <Property Name="shiftId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shift">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="startTime" Type="Int32" Nullable="false" />
+          <Property Name="endTime" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="numerOfactions" Type="Int32" />
+          <Property Name="action" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="FactoryFinalProjectDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="department" EntityType="Self.department" />
+          <EntitySet Name="employee" EntityType="Self.employee" />
+          <EntitySet Name="employeeShift" EntityType="Self.employeeShift" />
+          <EntitySet Name="shift" EntityType="Self.shift" />
+          <EntitySet Name="users" EntityType="Self.users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FactoryFinalProjectDBModelStoreContainer" CdmEntityContainer="FactoryFinalProjectDBEntities">
+          <EntitySetMapping Name="department">
+            <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="depId" ColumnName="depId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="manager" ColumnName="manager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employee">
+            <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="fNmae" ColumnName="fNmae" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="startWorkYear" ColumnName="startWorkYear" />
+                <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employeeShift">
+            <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.employeeShift">
+              <MappingFragment StoreEntitySet="employeeShift">
+                <ScalarProperty Name="esId" ColumnName="esId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="shiftId" ColumnName="shiftId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shift">
+            <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.shift">
+              <MappingFragment StoreEntitySet="shift">
+                <ScalarProperty Name="sid" ColumnName="sid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="FactoryFinalProjectDBModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="numerOfactions" ColumnName="numerOfactions" />
+                <ScalarProperty Name="action" ColumnName="action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
